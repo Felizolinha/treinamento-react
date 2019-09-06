@@ -1,35 +1,14 @@
 const express = require("express");
 const routes = express.Router();
 
-routes.get("/login", (req, res) => {
-  const { username, password } = req.query;
-  res
-    .json({
-      userId: username + password
-    })
-    .sendStatus(200);
-});
+const LoginController = require("./controllers/LoginController.js");
 
-routes.post("/signup", (req, res) => {
-  const { username, password } = req.body;
+routes.get("/login", LoginController.login);
 
-  res
-    .json({
-      userId: username + password
-    })
-    .sendStatus(201);
-});
+routes.post("/signup", LoginController.signup);
 
-routes.put("/account", (req, res) => {
-  const { username, oldPassword, newPassword } = req.body;
+routes.put("/account", LoginController.updatePassword);
 
-  res.sendStatus(204);
-});
-
-routes.delete("/account", (req, res) => {
-  const { username, password } = req.query;
-
-  res.sendStatus(204);
-});
+routes.delete("/account", LoginController.deleteUser);
 
 module.exports = routes;
