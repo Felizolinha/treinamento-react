@@ -20,10 +20,10 @@ User ID (string)
 
 **Body:** username, oldPassword, newPassword
 **Returns:** Nothing
-**Response Codes:** 204(Successfully updated login), 401(wrong username or password)
+**Response Codes:** 204(Successfully updated login), 401(wrong username or password), 500(Failed to save changes on database)
 
 ## DELETE /account
 
 **Query:** username, password
 **Returns:** Nothing
-**Response Codes:** 204(Success), 401(wrong username or password)
+**Response Codes:** 204(Success), 401(wrong username or password), 500(An error occurred during deletion)
