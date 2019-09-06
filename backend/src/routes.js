@@ -7,7 +7,7 @@ routes.get("/login", (req, res) => {
     .json({
       userId: username + password
     })
-    .send(200);
+    .sendStatus(200);
 });
 
 routes.post("/signup", (req, res) => {
@@ -17,19 +17,19 @@ routes.post("/signup", (req, res) => {
     .json({
       userId: username + password
     })
-    .send(201);
+    .sendStatus(201);
 });
 
 routes.put("/account", (req, res) => {
   const { username, oldPassword, newPassword } = req.body;
 
-  res.send(204);
+  res.sendStatus(204);
 });
 
-routes.delete("/delete", (req, res) => {
+routes.delete("/account", (req, res) => {
   const { username, password } = req.query;
 
-  res.send(204);
+  res.sendStatus(204);
 });
 
 module.exports = routes;
