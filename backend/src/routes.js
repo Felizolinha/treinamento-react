@@ -13,13 +13,17 @@ routes.get("/login", (req, res) => {
 routes.post("/signup", (req, res) => {
   const { username, password } = req.body;
 
-  console.log("Hello");
-
   res
     .json({
       userId: username + password
     })
     .send(201);
+});
+
+routes.put("/account", (req, res) => {
+  const { username, oldPassword, newPassword } = req.query;
+
+  res.send(204);
 });
 
 module.exports = routes;
