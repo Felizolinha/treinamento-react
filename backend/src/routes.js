@@ -10,4 +10,16 @@ routes.get("/login", (req, res) => {
     .send(200);
 });
 
+routes.post("/signup", (req, res) => {
+  const { username, password } = req.body;
+
+  console.log("Hello");
+
+  res
+    .json({
+      userId: username + password
+    })
+    .send(201);
+});
+
 module.exports = routes;
