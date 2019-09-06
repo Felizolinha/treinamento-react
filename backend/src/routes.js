@@ -26,4 +26,10 @@ routes.put("/account", (req, res) => {
   res.send(204);
 });
 
+routes.delete("/delete", (req, res) => {
+  const { username, password } = req.query;
+
+  res.send(204);
+});
+
 module.exports = routes;
