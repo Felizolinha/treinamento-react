@@ -21,7 +21,7 @@ routes.post("/signup", (req, res) => {
 });
 
 routes.put("/account", (req, res) => {
-  const { username, oldPassword, newPassword } = req.query;
+  const { username, oldPassword, newPassword } = req.body;
 
   res.send(204);
 });
