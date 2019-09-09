@@ -1,8 +1,8 @@
 # Rotas
 
-## GET /login
+## POST /login
 
-**Query:** username, password
+**Body:** username, password
 **Returns:** JSON -> {
 User ID (string)
 }

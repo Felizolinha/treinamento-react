@@ -2,7 +2,7 @@ const User = require("../models/UserSchema.js");
 
 module.exports = {
   async login(req, res) {
-    const { username, password } = req.query;
+    const { username, password } = req.body;
     const userAuthenticated = await User.findOne({
       $and: [{ username: username }, { password: password }]
     });
